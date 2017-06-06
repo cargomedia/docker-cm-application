@@ -1,4 +1,4 @@
-FROM cargomedia/base:v1
+FROM cargomedia/base:latest
 
 # Provision with puppet
 WORKDIR '/tmp/puppet'
