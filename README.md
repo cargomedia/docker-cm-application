@@ -2,18 +2,14 @@ cargomedia/cm-application
 =========================
 Docker image with cm application dependencies.
 
-
 Build:
 ```sh
 docker build -t cargomedia/cm-application:latest .
 ```
 
-Run a cm application's `Procfile` with foreman (in test mode):
+Run a cm application (services via [supervisord](http://supervisord.org/) + php5-fpm)
 ```
-docker run -it --rm -v /path/to/my-project:/opt/project cargomedia/cm-application:latest foreman start -d /opt/project
+docker run -it --rm --workdir /opt/project -v /path/to/my-project:/opt/project cargomedia/cm-application:latest
 ```
 
-Run php-fpm (in test mode):
-```
-docker run -it --rm cargomedia/cm-application:latest /docker-run-php5-fpm
-```
+*Note: the workdir must match with the project directory mounted in the container*
