@@ -11,4 +11,5 @@ COPY ./config/supervisor.conf /etc/supervisor.conf
 COPY ./scripts /scripts/
 
 EXPOSE 9000
-CMD ["/scripts/start.sh"]
+ENTRYPOINT ["/scripts/entrypoint.sh"]
+CMD ["start"]
